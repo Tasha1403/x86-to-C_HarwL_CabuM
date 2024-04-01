@@ -7,23 +7,23 @@ The purpose of this project is to analyze the execution time difference between 
 ### Debug Mode
 | Vector Size | Kernel A | Kernel C |
 | --- | --- | --- |
-| 2^20 | 0.933 ms |  2.467 ms |
-| 2^24 | 18.000 ms |  41.533 ms |
-| 2^28 | 270.200 ms |  655.167 ms |
+| 2^20 | 1.000 ms |  2.333 ms |
+| 2^24 | 16.500 ms |  36.900 ms |
+| 2^28 | 263.933 ms |  612.000 ms |
 
 ### Release Mode
 | Vector Size | Kernel A | Kernel C |
 | --- | --- | --- |
-| 2^20 |  ms |  ms |
-| 2^24 |  ms |   ms |
-| 2^28 |  ms |   ms |
+| 2^20 | 0.933 ms | 0.667 ms |
+| 2^24 | 16.233 ms | 13.433 ms |
+| 2^28 | 258.600  ms | 235.933 ms |
 
 **Note:**
 - Kernel A => x86-64 assembly language
 - Kernel C => C programming language
 
 ### Analysis
-After analysing the comparison between the execution times of Kernel A and C across different vector sizes, it was observed that the ***Kernel A***, the function written in assembly language, ***runs twice as fast*** as **Kernel C**, which was a function implemented purely in C.
+After analyzing the comparison between the execution times of Kernel A and C across different vector sizes and modes, it was observed that ***Kernel A***, the function written in assembly language, ***runs twice as fast*** as **Kernel C**, which was a function implemented purely in C.
 
 ---
 
