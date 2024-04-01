@@ -5,5 +5,10 @@
 | 2^20 | 0.933 ms |  2.467 ms |
 | 2^24 | 18.000 ms |  41.533 ms |
 | 2^28 | 270.200 ms |  655.167 ms |
+
+**Note:**
+- Kernel A => x86-64 assembly language
+- Kernel C => C programming language
+
 ---
 
