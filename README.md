@@ -5,6 +5,8 @@ The purpose of this project is to analyze the execution time difference between 
 
 ## I. Average Execution Time Per Vector Sizes in each Kernel (30 Runs)
 ### Debug Mode
+
+![debug](https://github.com/Tasha1403/x86-to-C_HarwL_CabuM/assets/115960087/054db7d4-8a5f-431c-b291-4cf20e205c38)
 | Vector Size | Kernel A | Kernel C |
 | --- | --- | --- |
 | 2^20 | 1.000 ms |  2.333 ms |
@@ -12,6 +14,8 @@ The purpose of this project is to analyze the execution time difference between 
 | 2^28 | 263.933 ms |  612.000 ms |
 
 ### Release Mode
+
+![release](https://github.com/Tasha1403/x86-to-C_HarwL_CabuM/assets/115960087/32cddd8f-8daf-4cb4-8e05-2ca3c61e447e)
 | Vector Size | Kernel A | Kernel C |
 | --- | --- | --- |
 | 2^20 | 0.933 ms | 0.667 ms |
@@ -23,13 +27,17 @@ The purpose of this project is to analyze the execution time difference between 
 - Kernel C => C programming language
 
 ### Analysis
-After analyzing the comparison between the execution times of Kernel A and C across different vector sizes, it was observed that ***Kernel A***, the function written in assembly language, ***runs twice as fast*** as **Kernel C**, which was a function implemented purely in C. However, this is only applies for the ***Debug Mode***. 
+After analyzing the comparison between the execution times of Kernel A and C across different vector sizes, it was observed that ***Kernel A***, the function written in assembly language, ***runs twice as fast*** as **Kernel C**, which was a function implemented purely in C. However, this only applies to ***Debug Mode***. 
 
-On the otherhand, for the ***Release Mode***, ***Kernel C runs slightly faster*** than **Kernel A** because C compiler provides optimizations to produce optimized machine code. However, in **Debug Mode**, there was no optimization applied for the C code for easier debugging, resulting in Kernel A running faster than Kernel C.
+In contrast, under the ***Release Mode***, it seems that ***Kernel C runs slightly faster*** than **Kernel A** because the compiler implements optimization techniques to the code in order to produce optimized machine code. However, within **Debug Mode**, there is no optimization applied to the C code to facilitate easier debugging, resulting in Kernel A executing faster than Kernel C.
 
 ---
 
-## II. Comparison of Outputs between Kernel A and C
+## II. Correctness Checking
 ### Debug Mode
 
+
 ### Release Mode
+
+---
+
