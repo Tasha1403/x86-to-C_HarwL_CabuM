@@ -4,7 +4,7 @@ The purpose of this project is to analyze the difference in execution time betwe
 ---
 
 ## I. Average Execution Time Per Vector Size in each Kernel (30 Runs)
-### <u>Debug Mode<\u>
+### Debug Mode
 
 ![debug](https://github.com/Tasha1403/x86-to-C_HarwL_CabuM/assets/115960087/054db7d4-8a5f-431c-b291-4cf20e205c38)
 | Vector Size | Kernel A | Kernel C |
@@ -13,7 +13,7 @@ The purpose of this project is to analyze the difference in execution time betwe
 | 2^24 | 16.500 ms |  36.900 ms |
 | 2^28 | 263.933 ms |  612.000 ms |
 
-### <u>Release Mode<\u>
+### Release Mode
 
 ![release](https://github.com/Tasha1403/x86-to-C_HarwL_CabuM/assets/115960087/32cddd8f-8daf-4cb4-8e05-2ca3c61e447e)
 | Vector Size | Kernel A | Kernel C |
