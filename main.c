@@ -102,7 +102,7 @@ int main() {
     kernelC(n, a, x, y, z);
 
     for (i = 0; i < n; i++) {
-        printf("%.2f ", z[i]);
+        printf("%.1f ", z[i]);
     }
 
     printf("\n\n");
