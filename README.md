@@ -47,6 +47,7 @@ In contrast, under the ***Release Mode***, it seems that ***Kernel C runs slight
 ## How to run the code
 **Requirements**
 - You must have Visual Studio 2020 and NASM
+- You must download the Desktop development with C++ & Universal Windows Platform development workloads in the VS installer.
 
 **How to Run in Visual Studio 2020**
 - Download the whole repository as zip file and extract it to your desired folder.
