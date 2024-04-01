@@ -56,5 +56,5 @@ In contrast, under the ***Release Mode***, it seems that ***Kernel C runs slight
 
 ---
 ## Important Notes
-- This code was run with *Intel(R) Core(TM) i5-10300H CPU @ 2.50GHz* process with *24GB of RAM*. In case you want to run the code, you might want to decrease the value of *"n3"* depending on how much your machine could handle.
+- This code was run with *Intel(R) Core(TM) i5-10300H CPU @ 2.50GHz* processor with *24GB of RAM*. In case you want to run the code, you might want to decrease the value of *"n3"* depending on how much your machine could handle.
 ---
