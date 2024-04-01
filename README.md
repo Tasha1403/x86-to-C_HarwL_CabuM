@@ -19,5 +19,5 @@ After analysing the comparison between the execution times of Kernel A and C acr
 
 ---
 
-## II. Comparison of Outputs between Kernel A and B
+## II. Comparison of Outputs between Kernel A and C
 
