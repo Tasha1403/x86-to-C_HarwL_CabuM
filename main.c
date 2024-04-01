@@ -5,11 +5,11 @@
 
 extern void kernelA(int n, float* a, float* x, float* y, float* z);
 
-void kernelC(int n, float a, float *x, float *y, float* z) {
+void kernelC(int n, float a, float* x, float* y, float* z) {
 
-	for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++) {
         z[i] = a * x[i] + y[i];
-	}
+    }
 }
 
 void initialize_random_vector(int n, float vector[]) {
@@ -20,18 +20,7 @@ void initialize_random_vector(int n, float vector[]) {
 
 
 int main() {
-	
-    /*float x[] = { 14.0, 15.0, 17.0, 18.0 };
-    float y[] = { 11.0, 12.0, 13.0, 1.0 };
-    float z[4];*/
 
-    float x[4];
-    float y[4];
-    float z[4];
-
-    int n = 4;
-
-   
     int n1 = 1 << 20; // 2^20
     int n2 = 1 << 24; // 2^24
     int n3 = 1 << 28; // 2^28
@@ -50,9 +39,6 @@ int main() {
 
     // Initialize random vectors
 
-    initialize_random_vector(n, x);
-    initialize_random_vector(n, y);
-
     initialize_random_vector(n1, x1);
     initialize_random_vector(n1, y1);
 
@@ -63,50 +49,6 @@ int main() {
     initialize_random_vector(n3, y3);
 
     float a = 2.0;
-
-    int i;
-
-    //Sanity Check
-    printf("-----SANITY CHECKER-----\n\n");
-
-    kernelA(n, &a, x, y, z);
-
-    printf("A value: %.1f \n", a);
-
-    printf("X values: ");
-
-    for (i = 0; i < n; i++) {
-        printf("%.1f ", x[i]);
-    }
-
-    printf("\n");
-
-    printf("Y values: ");
-
-    for (i = 0; i < n; i++) {
-        printf("%.1f ", y[i]);
-    }
-
-    printf("\n\n");
-
-    printf("Assembly Output: ");
-
-    for (i = 0; i < n; i++) {
-        printf("%.1f ", z[i]);
-    }
-
-    printf("\n\n");
-
-    printf("C Output: ");
-
-    kernelC(n, a, x, y, z);
-
-    for (i = 0; i < n; i++) {
-        printf("%.1f ", z[i]);
-    }
-
-    printf("\n\n");
-
 
     // Aeverage Execution Time Testing
     printf("-----KERNEL AVERAGE TIMES-----\n\n");
@@ -195,6 +137,143 @@ int main() {
 
     printf("\n\n");
 
+    int i;
 
-	return 0;
+    //Sanity Check
+    printf("----- Correctness Check -----\n\n");
+
+    printf("A value: %.1f \n\n", a);
+    
+    printf("--- Vector Size N = 3 Outputs ---\n\n");
+
+    float x[] = { 1.0, 2.0, 3.0 };
+    float y[] = { 11.0, 12.0, 13.0 };
+    float z[3];
+
+    int n = 3;
+
+    printf("X values: ");
+
+    for (i = 0; i < n; i++) {
+        printf("%.1f ", x[i]);
+    }
+
+    printf("\n");
+
+    printf("Y values: ");
+
+    for (i = 0; i < n; i++) {
+        printf("%.1f ", y[i]);
+    }
+
+    printf("\n\n");
+
+    printf("Assembly Output: ");
+
+    kernelA(n, &a, x, y, z);
+
+    for (i = 0; i < n; i++) {
+        printf("%.1f ", z[i]);
+    }
+
+    printf("\n\n");
+
+    printf("C Funct Output:  ");
+
+    kernelC(n, a, x, y, z);
+
+    for (i = 0; i < n; i++) {
+        printf("%.1f ", z[i]);
+    }
+
+    printf("\n\n");
+
+    printf("--- Vector Size N = 10 Outputs ---\n\n");
+
+    float x4[10];
+    float y4[10];
+    float z4[10];
+
+    int n4 = 10;
+
+    initialize_random_vector(n4, x4);
+    initialize_random_vector(n4, y4);
+
+    printf("X values: ");
+
+    for (i = 0; i < 10; i++) {
+        printf("%.1f ", x4[i]);
+    }
+
+    printf("\n");
+
+    printf("Y values: ");
+
+    for (i = 0; i < 10; i++) {
+        printf("%.1f ", y4[i]);
+    }
+
+    printf("\n\n");
+
+    printf("Assembly Output: ");
+
+    kernelA(n4, &a, x4, y4, z4);
+
+    for (i = 0; i < 10; i++) {
+        printf("%.1f ", z4[i]);
+    }
+
+    printf("\n\n");
+
+    printf("C Funct Output:  ");
+
+    kernelC(n4, a, x4, y4, z4);
+
+    for (i = 0; i < 10; i++) {
+        printf("%.1f ", z4[i]);
+    }
+
+    printf("\n\n");
+
+    printf("--- Vector Size N = 2^20 Outputs ---\n\n");
+
+    printf("X values: ");
+
+    for (i = 0; i < 10; i++) {
+        printf("%.1f ", x1[i]);
+    }
+
+    printf("\n");
+
+    printf("Y values: ");
+
+    for (i = 0; i < 10; i++) {
+        printf("%.1f ", y1[i]);
+    }
+
+    printf("\n\n");
+
+    printf("Assembly Output: ");
+
+    kernelA(n1, &a, x1, y1, z1);
+
+    for (i = 0; i < 10; i++) {
+        printf("%.1f ", z1[i]);
+    }
+
+    printf("\n\n");
+
+    printf("C Funct Output:  ");
+
+    kernelC(n1, a, x1, y1, z1);
+
+    for (i = 0; i < 10; i++) {
+        printf("%.1f ", z1[i]);
+    }
+
+    printf("\n\n--------------------------------");
+
+
+
+    return 0;
 }
