@@ -23,7 +23,9 @@ The purpose of this project is to analyze the execution time difference between 
 - Kernel C => C programming language
 
 ### Analysis
-After analyzing the comparison between the execution times of Kernel A and C across different vector sizes and modes, it was observed that ***Kernel A***, the function written in assembly language, ***runs twice as fast*** as **Kernel C**, which was a function implemented purely in C.
+After analyzing the comparison between the execution times of Kernel A and C across different vector sizes, it was observed that ***Kernel A***, the function written in assembly language, ***runs twice as fast*** as **Kernel C**, which was a function implemented purely in C. However, this is only applies for the ***Debug Mode***. 
+
+On the otherhand, for the ***Release Mode***, ***Kernel C runs slightly faster*** than **Kernel A** because C compiler provides optimizations to produce optimized machine code. However, in **Debug Mode**, there was no optimization applied for the C code for easier debugging, resulting in Kernel A running faster than Kernel C.
 
 ---
 
